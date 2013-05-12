@@ -31,6 +31,30 @@ body {
 	font-family: Helvetica, Arial;
 }
 
+.copy-txt {
+	font-family: Arial;
+	font-size: 16px;
+	color: black;
+	line-height: 20px;
+	margin: 15px;
+	font-weight: bold;
+}
+
+.copy-txt.big-title {
+	font-size: 22px;
+	margin-left: 0;
+}
+
+.copy-txt.point {
+	margin-left: 15px;
+}
+
+.copy-txt.sub-title {
+	font-weight: bold;
+	margin-left: 0;
+	font-size: 18px;
+}
+
 .navbar {
 	margin-bottom: 0!important;
 }
@@ -84,7 +108,7 @@ body {
 
 /*Home menu BEGIN*/
 .main .content .content-buttons {
-	width: 150px;
+	width: 230px;
 	margin: 0 auto;
 	margin-top: 60px;
 }
@@ -100,6 +124,7 @@ body {
 	margin-bottom: 20px;
 	color: white;
 	cursor: pointer;
+	font-family: Arial;
 }
 
 .main .content .content-buttons .menu-button.take-pic{}
@@ -134,11 +159,13 @@ body {
 .main .content .tag-container input[type="text"].tag-field {
 	border: 1px solid #CCC;
 	background-color: white;
-	width: 200px;
-	height: 30px;
-	padding: 4px;
+	width: 260px;
+	height: 50px;
+	padding: 14px;
 	margin-left: 10px;
 	color: black;
+	font-size: 17px;
+	font-family: Arial;
 }
 
 .main .content input[type="submit"].submit-btn {
@@ -154,15 +181,6 @@ body {
 
 /*--------///-----------*/
 
-
-background-color: black;
-	text-transform: uppercase;
-	color: white;
-	font-size: 18px;
-	padding: 5px;
-	border: 0;
-	margin: 15px 0;
-	margin-left: 60px;
 
 
 /*Photo info BEGIN*/
