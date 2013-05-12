@@ -25,8 +25,7 @@ angular.module('initApp.services', ['LocalStorageModule', 'ngResource'])
 
       var service ="http://patrimonio-cultural.elauria.com/api/v1/points/create";
       var img = document.createElement("img");
-
-      img.src = this.photo;
+     img.src = this.photo;
      // Create an empty canvas element
      var canvas = document.createElement("canvas");
      canvas.width = img.width;
@@ -35,9 +34,9 @@ angular.module('initApp.services', ['LocalStorageModule', 'ngResource'])
      var ctx = canvas.getContext("2d");
      ctx.drawImage(img, 0, 0);
 
-     var dataURL = canvas.toDataURL("image/jpeg");
-     alert(dataURL);
-      var newpoint ={ photo: dataURL,
+     var dataURL = canvas.toDataURL("image/png");
+    
+      var newpoint ={ photo:dataURL,
         latitude:  this.location.latitude,
         longitude : this.location.longitude,
         tag :this.tag};

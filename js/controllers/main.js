@@ -6,6 +6,7 @@ initApp.controller('pointController', function ($scope, geolocation, camera, dev
   $scope.refreshLocation = function() {
    geolocation.getCurrentPosition(function (position) {
      $scope.position = position;
+     var a =  "";
      $scope.map = "http://maps.google.com/maps/api/staticmap?sensor=false&center=" + position.coords.latitude + "," +
                     position.coords.longitude + "&zoom=20&size=500x300&markers=color:blue|label:S|" +
                     position.coords.latitude + ',' + position.coords.longitude;
@@ -16,21 +17,23 @@ initApp.controller('pointController', function ($scope, geolocation, camera, dev
  $scope.takepic = function() {
   camera.getPicture(function (image) {
     points.setPhoto(image);
-    alert(image);
     $scope.photo = points.photo;
     window.location.hash ="take-photo";
   });
 };
 
 
-$scope.wait= false;
+
+$scope.wait = false;
 $scope.submitPoint = function() {
+  $scope.wait = true;
   points.setTag($scope.tag);
-  $scope.wait= true;
   points.submit(function(){
     window.location.hash ="finish";
   });
 };
+
+
 
 $scope.refreshLocation();
 $scope.photo = points.photo;
