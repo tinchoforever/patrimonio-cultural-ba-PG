@@ -6,10 +6,7 @@ initApp.controller('pointController', function ($scope, geolocation, camera, dev
   $scope.refreshLocation = function() {
    geolocation.getCurrentPosition(function (position) {
      $scope.position = position;
-      $scope.map = "http://maps.google.com/maps/api/staticmap?sensor=false&center=" + position.coords.latitude + "," +
-                    position.coords.longitude + "&zoom=20&size=300x200&markers=color:blue|label:S|" +
-                    position.coords.latitude + ',' + position.coords.longitude;
-
+      $scope.map = "http://staticmap.openstreetmap.de/staticmap.php?center=" + position.coords.latitude  + ',' +position.coords.longitude + "&zoom=20&size=300x200&maptype=mapnik&markers="+ position.coords.latitude + ',' +position.coords.longitude +",lightblue1";
       points.setLocation(position.coords);
    });
  };
