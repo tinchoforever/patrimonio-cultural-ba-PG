@@ -22,9 +22,10 @@ initApp.controller('pointController', function ($scope, geolocation, camera, dev
 };
 
 
-
+$scope.wait= false;
 $scope.submitPoint = function() {
   points.setTag($scope.tag);
+  $scope.wait= true;
   points.submit(function(){
     window.location.hash ="finish";
   });
