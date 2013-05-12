@@ -16,6 +16,7 @@ initApp.controller('pointController', function ($scope, geolocation, camera, dev
  $scope.takepic = function() {
   camera.getPicture(function (image) {
     points.setPhoto(image);
+    alert(image);
     $scope.photo = points.photo;
     window.location.hash ="take-photo";
   });
@@ -30,8 +31,6 @@ $scope.submitPoint = function() {
     window.location.hash ="finish";
   });
 };
-
-
 
 $scope.refreshLocation();
 $scope.photo = points.photo;
