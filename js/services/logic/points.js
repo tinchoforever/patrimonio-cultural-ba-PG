@@ -11,6 +11,10 @@ angular.module('initApp.services', ['LocalStorageModule', 'ngResource'])
   return {
     photo: '',
     location: {},
+    tag: '',
+     setTag: function (tag) {
+      this.tag = tag;
+    },
     setLocation: function (location) {
       this.location = location;
     },
@@ -20,7 +24,23 @@ angular.module('initApp.services', ['LocalStorageModule', 'ngResource'])
     submit:function (callback){
 
       var service ="http://localhost:1984/api/v1/points/create";
-      var newpoint ={};
+      var img = document.createElement("img");
+     img.src = this.photo;
+     // Create an empty canvas element
+     var canvas = document.createElement("canvas");
+     canvas.width = img.width;
+     canvas.height = img.height;
+     // // Copy the image contents to the canvas
+     var ctx = canvas.getContext("2d");
+     ctx.drawImage(img, 0, 0);
+
+     var dataURL = canvas.toDataURL("image/png");
+     this.photo = dataURL;
+     console.log(this.photo);
+      var newpoint ={ photo: this.photo,
+        latitude:  this.location.latitude,
+        longitude : this.location.longitude,
+        tag :this.tag};
       $http.post(service, newpoint ).success(function(data) {
          callback();
       });
