@@ -8,6 +8,8 @@ initApp.controller('pointController', function ($scope, geolocation, camera, dev
      $scope.position = position;
       $scope.map = "http://staticmap.openstreetmap.de/staticmap.php?center=" + position.coords.latitude  + ',' +position.coords.longitude + "&zoom=20&size=300x200&maptype=mapnik&markers="+ position.coords.latitude + ',' +position.coords.longitude +",lightblue1";
       points.setLocation(position.coords);
+      // alert(position);
+      // console.log(position);
    });
  };
 
@@ -15,7 +17,9 @@ initApp.controller('pointController', function ($scope, geolocation, camera, dev
   camera.getPicture(function (image) {
     points.setPhoto(image);
     $scope.photo = points.photo;
-    window.location.hash ="take-photo";
+    // points.submit(function(){
+      window.location.hash ="take-photo";
+    // });
   });
 };
 
