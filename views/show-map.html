@@ -1,15 +1,19 @@
-<div class="content preview-photo">
-	<div class="picture-container">
-	<img class="photo" ng-src="{{photo}}"/>
-		<div class="picture-bottom">
-			<h1 class="caption" class="copy-txt big-title point"> Donde esta esta obra?</h1>
+<div id="wrapper">
+	<div id="scroller" class="content">
+		<div class="overflow-auto preview-photo">
+			<div class="picture-container">
+				<img class="photo" ng-src="{{photo}}"/>
+				<div class="picture-bottom">
+					<h1 class="caption" class="copy-txt big-title point"> Donde esta esta obra?</h1>
+				</div>
+			</div>
+		    <div class="map-container-general">
+		      <img ng-src="{{map}}"/></p>
+		    </div>
 		</div>
-	</div>
-    <div class="map-container-general">
-      <img ng-src="{{map}}"/></p>
-		<div class="bottom-buttons">
+		<div class="bottom-buttons fixed-menu">
 		   <a ng-click="refreshLocation()" class="big-button map" href="" ng-click="takepic()">Sacar otra</a>
 	       <a class="next-button" href="" onclick="window.location.hash='/tag'"><span class="caption">Siguiente</span><span class="arrow"></span></a>
 	    </div>
-    </div>
+	</div>
  </div>
