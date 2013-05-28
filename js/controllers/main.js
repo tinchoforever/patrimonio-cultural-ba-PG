@@ -48,7 +48,6 @@ initApp.controller('pointController', function ($scope, geolocation, camera, dev
 		
 		setTimeout(function(){
 			doc.querySelector(".overflow-auto").style.height = (doc.querySelector("#scroller").clientHeight - paddingBottom) + "px";
-			var myScroll = new IScroll('#wrapper', { mouseWheel: true });
 		},1000);
 	});
 
