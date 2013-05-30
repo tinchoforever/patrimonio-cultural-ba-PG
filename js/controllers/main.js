@@ -27,11 +27,13 @@ initApp.controller('pointController', function ($scope, geolocation, camera, dev
 
 	$scope.wait = false;
 	$scope.submitPoint = function() {
-	$scope.wait = true;
-	points.setTag($scope.tag);
-	points.submit(function(){
-	  window.location.hash ="finish";
-	});
+		document.querySelector(".lading").style.display = "block";
+		$scope.wait = true;
+		points.setTag($scope.tag);
+		points.submit(function(){
+			document.querySelector(".lading").style.display = "none";
+	  		window.location.hash ="finish";
+		});
 	};
 
 
