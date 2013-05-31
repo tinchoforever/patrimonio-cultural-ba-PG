@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.RGA.Mapart" version="2.2.0">
-    <name>Mapart</name>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="2NZ3J3RVH9.com.rga.mapart" version="2.2.0">
+    <name>MapArt</name>
 
     <description>
         Mobile art aggregator
     </description>
 
-    <author href="http://www.rga.com/" email="martin.rabaglia@rga.com">
+    <author href="http://www.rga.com/" email="ezequiel.lauria@rga.com">
         R/GA Buenos Aires
     </author>
 
     <feature name="http://api.phonegap.com/1.0/device" />
 
-	<preference name="phonegap-version" value="2.5.0" />
+	<preference name="phonegap-version" value="2.7.0" />
     <preference name="webviewbounce" value="false" />
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" />
