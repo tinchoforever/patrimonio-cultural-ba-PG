@@ -1,5 +1,6 @@
 body,h1,h2,h3,h4,h5,h6,p,ul,li,a,table {margin: 0; padding: 0;}
 
+html, body{height:100%;}
 body {
 	background-color: #ebebeb;
 	font-family:Helvetica, Arial;
@@ -19,14 +20,10 @@ a,input {
 }
 
 .loading {
-	display:none;
-	background: url(../img/ico-loading.gif) rgba(0,0,0,0.5) center center no-repeat;
-	height:100%;
-	left:0;
+	background: url(../img/ico-loading.gif) no-repeat;
+	width: 31px;
+	height: 31px;
 	margin: 0 auto;
-	position:absolute;
-	top:0;
-	width:100%;
 }
 
 .finish-copy {
@@ -39,8 +36,8 @@ a,input {
 }
 
 .finish-photo {
-	max-width: 100%;
-	min-height: 100%;
+	height: 100%;
+	max-width:none;
 }
 
 .submit-btn {
@@ -88,10 +85,12 @@ a,input {
 .main {
 	width: 100%;
 	font-family: Helvetica, Arial;
+	height:100%;
+	position:relative;
 }
 
 .main .main-header{
-	height: 44.5px;
+	height:8%;
 	width: 100%;
 	background-color: #1e1e1e;
 	overflow:hidden;
@@ -129,12 +128,19 @@ a,input {
 	line-height: 58px;
 }
 
+.main .content {
+	/*padding-bottom: 20px;*/
+	height: 100%;
+	position: relative;
+}
+
 /*Home menu BEGIN*/
 .main .content .bg-last-pic {
 	background: url(../img/img-ppal.jpg) no-repeat;
-	position:relative;
 	width: 100%;
-	height: 357px;
+	height:68.2%;
+	position: relative;
+	/*bottom: 80px;*/
 }
 
 .main .content .bg-last-pic.finish-pic {
@@ -142,7 +148,8 @@ a,input {
 }
 
 .main .content .bg-last-pic .welcome-txt{
-	background: rgba(0,0,0,.5);
+	background: #000;
+	opacity: .5;
 	padding: 23px;
 	position: absolute;
 	bottom: 0;
@@ -166,9 +173,11 @@ a,input {
 }
 
 .main .content .content-buttons {
-	overflow:hidden;
 	width: 100%;
 	margin: 0 auto;
+	position: absolute;
+	bottom: 0;
+	height:31.8%;
 }
 
 .main .content .content-buttons .menu-button{
@@ -183,7 +192,7 @@ a,input {
 	font-family: Arial;
 	float: left;
 	background-position: 50% 45%;
-	padding-top: 100px;
+	padding-top: 120px;
 }
 
 .main .content .content-buttons .menu-button.see-map{
@@ -306,18 +315,16 @@ a,input {
 
 .preview-photo .photo{
 	display:block;
-	max-height:420px;
-	width:100%;
+	height:100%;
+	max-width: none;
 }
 
 .preview-photo .picture-container{
 	position:relative;
+	height:86%;
 }
 
 .preview-photo .picture-container .picture-bottom{
-	bottom:0;
-	left:0;
-	position:absolute;
 	width:100%;
 }
 .preview-photo .picture-container .picture-bottom .caption{
@@ -351,6 +358,9 @@ a,input {
 	background:#ffd512;
 	height:75px;
 	overflow:hidden;
+	width:100%;
+	position:absolute;
+	bottom:0;
 }
 
 .bottom-buttons .big-button{
@@ -362,6 +372,7 @@ a,input {
 	font-size:0;
 	height:75px;
 	width:108px;
+	text-indent: -9999px;
 }
 
 .bottom-buttons .big-button.photo{
@@ -372,10 +383,14 @@ a,input {
 	background-image:url("../img/art.png");
 }
 
+.bottom-buttons .geo-button{
+	background-image:url("../img/geo.png");
+}
+
 .bottom-buttons .next-button{
 	float:right;
-	margin-right:22px;
-	margin-top:30px;
+	display:block;
+	padding:30px 22px 30px 70px;
 }
 
 .bottom-buttons .next-button .caption{
@@ -396,31 +411,170 @@ a,input {
 	width:10.5px;
 }
 
-.fixed-menu{
-	bottom:0;
-	left:0;
-	position:absolute;
-	width:100%;
-}
-
-/* SCROLLER */
-
-#wrapper{
+.container{
+	height:92%;
 	position:relative;
 }
 
-#scroller{
-	height:100%;
-	overflow:auto;
-	padding-bottom:75px;
+/*preview*/
+.preview-photo{
+	background:#000;
+}
+
+.preview-photo .data-content-position{
 	position:absolute;
+	bottom:0;
+	height:280px;
+	overflow:hidden;
 	width:100%;
 }
 
-#scroller.home{
-	padding-bottom:166px;
+.preview-photo .data-content-position .map-container-general img{
+	width:100%;
 }
 
-.overflow-auto{
-	overflow:auto;
+.preview-photo .data-content-tag{
+	height:217px;
+}
+
+/*discover*/
+.discover .map-discover{
+	width:100%;
+	height:140px;
+	overflow:hidden;
+}
+
+.discover .map-discover img{
+	width: 100%
+}
+
+.discover ul{
+	background-color:#fff;
+}
+
+.discover li{
+	border-bottom:1px solid #ccc;
+}
+
+.discover li a{
+	height:80px;
+	display:block;
+	overflow:hidden;
+}
+
+.discover li a .discover-img img{
+	float:left;
+	height:80px;
+	width:110px;
+	overflow:hidden;
+	margin-right:10px;
+}
+
+.discover li a .discover-detail{
+	display:block;
+	padding:28px 0 0 100px;
+	background:url("../img/discover.png") right 28px no-repeat;
+}
+
+.discover li a .discover-detail h3{
+	font:bold 15px/15px Arial;
+	text-transform:uppercase;
+	color:#000;
+}
+
+.discover li a .discover-detail span{
+	font:bold 15px/15px Arial;
+	display:block;
+	text-transform:uppercase;
+	color:#919191;
+}
+
+.discover-detail .img-detail-content{
+	height: 100%;
+	width:100%;
+	position: relative;
+}
+
+.discover-detail .img-detail-content img{
+	height:100%;
+	max-width: none;
+}
+
+.discover-detail .data-content-position{
+	position: absolute;
+	bottom:0;
+	width:100%;
+}
+
+.discover-detail .data-content-position .data-content-position-info{
+	height: 65px;
+	width:100%;
+	background: rgba(0,0,0,0.8);
+	padding:18px 0 0 25px;
+}
+
+.discover-detail .data-content-position h3{
+	font:bold 15px/15px Arial;
+	text-transform:uppercase;
+	color:#ffd512;
+	padding:0 5px 0 0;
+}
+
+.discover-detail .data-content-position span{
+	font:bold 15px/15px Arial;
+	display:block;
+	text-transform:uppercase;
+	color:#fff;
+}
+
+.discover-detail .data-content-position .bottom-buttons{
+	position:static;
+	background-color:#1e1e1e;
+}
+
+.discover-detail .data-content-position .bottom-buttons .discover-icon{
+	width:25%;
+	background-image:url("../img/ico-discover.png");
+	background-color:#ffd512;
+	background-size: 150%;
+}
+
+.discover-detail .data-content-position .bottom-buttons a{
+	width:25%;
+	height:75px;
+	display:block;
+	text-indent:-9999px;
+	float:left;
+	background-size: 150%;
+	background-position: center;
+}
+
+.discover-detail .data-content-position .bottom-buttons a.map{
+	background-image:url("../img/ico-map.png");
+}
+
+.discover-detail .data-content-position .bottom-buttons a.list{
+	background-image:url("../img/ico-list.png");
+}
+
+.discover-detail .data-content-position .bottom-buttons a.take-picture{
+	background-image:url("../img/ico-takepicture.png");
+}
+
+@media screen and (min-width: 480px) and (max-width: 640px){
+
+	.main .main-header{
+		height:14%;
+	}
+	.main .content .bg-last-pic{
+		background-size:100% auto;
+		background-position:center;
+	}
+	.main .content .bg-last-pic .welcome-txt{
+		height:100px;
+	}
+	.main .content .bg-last-pic p{
+		width:300px;
+	}
+
 }

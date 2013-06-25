@@ -1,13 +1,11 @@
-<div id="wrapper">
-	<div id="scroller" class="content">
-		<div class="overflow-auto preview-photo">
-			<div class="picture-container">
-				<img class="photo" ng-src="{{photo}}"/>
-				<div class="picture-bottom">
-					<h3 class="caption">
-						Describi la Obra
-					</h3>
-				</div>
+<div class="content preview-photo">
+	<div class="picture-container">
+		<img class="photo" ng-src="{{photo}}"/>
+		<div class="data-content-position data-content-tag">
+			<div class="picture-bottom">
+				<h3 class="caption">
+					Describi la Obra
+				</h3>
 			</div>
 			<div class="tag-photo">
 		        <h1 >Describi con palabras claves el<br />
@@ -15,9 +13,10 @@
 		        <input type="text" ng-model="tag" class="tag-field" placeholder="#" />
 			</div>
 		</div>
-		<div class="bottom-buttons fixed-menu">
-		   <div class="big-button art"></div>
-	       <a class="next-button" href="" ng-click="submitPoint()"><span class="caption">Siguiente</span><span class="arrow"></span></a>
-	    </div>
 	</div>
+	
+	<div class="bottom-buttons">
+	   <div class="big-button art"></div>
+       <a class="next-button" href="" ng-click="submitPoint()"><span class="caption">Siguiente</span><span class="arrow"></span></a>
+    </div>
 </div>

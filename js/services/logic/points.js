@@ -9,10 +9,12 @@ angular.module('initApp.services', ['LocalStorageModule', 'ngResource'])
 .value('version', '0.1')
 .service('points', function ($rootScope, $http, localStorageService, $resource,device) {
   return {
+    currentPhoto: {},
+    points: [],
     photo: '',
     location: {},
     tag: '',
-     setTag: function (tag) {
+    setTag: function (tag) {
       this.tag = tag;
     },
     setLocation: function (location) {
@@ -21,33 +23,50 @@ angular.module('initApp.services', ['LocalStorageModule', 'ngResource'])
      setPhoto: function (photo) {
       this.photo = photo;
     },
+    selectPhoto: function(photo){
+      this.currentPhoto= photo;
+    },
+    getAllNear: function(point, callback){
+      this.points = [];
+      var self = this;
+      // var service = 'http://localhost:1984/api/v1/points/take/10';
+      var service ='http://192.168.1.233:1984/api/v1/points/take/10';
+      $http.get(service).success(function(data){
+        self.points = data;
+        callback(self.points);
+      });
+
+
+    },
     submit:function (callback){
+       // var service = 'http://localhost:1984/api/v1/points/create';
+      var service ='http://192.168.1.233:1984/api/v1/points/create';
+      // var dataURL = canvas.toDataURL("image/png")
+      var fail, ft, options, params, win;
 
-      var service ='http://patrimonio-cultural.elauria.com/api/v1/points/create';
-
-
-     // var dataURL = canvas.toDataURL("image/png");
-     var fail, ft, options, params, win;
-
-      // callback if the photo fails to upload successfully.
+    // callback if the photo fails to upload successfully.
      var fail= function(error) {
 
         alert("An error has occurred: Code = " + error.code);
       };
       options = new FileUploadOptions();
+
+
       // parameter name of file:
       options.fileKey = "image";
-      // name of the file:
       options.fileName = this.photo.substr(this.photo.lastIndexOf('/') + 1);
-      // mime type:
       options.mimeType="image/png";
       options.chunkedMode=true;
-      params = {
-        latitude: 1, //this.location.latitude,
-        longitude : 2,// this.location.longitude,
+
+      //Parameters
+      options.params =  {
+        latitude: 1,//this.location.latitude,
+        longitude : 1,//this.location.longitude,
         tag : this.tag
       };
-      options.params = params;
+      console.log(options.params );
+
+      // send file
       ft = new FileTransfer();
       ft.upload(this.photo, service, callback, fail, options);
 

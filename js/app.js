@@ -9,6 +9,9 @@
       controller: 'pointController'
     }).when('/take-photo', {
       templateUrl: 'views/take-photo.html',
+      controller: 'takePhotoController'
+    }).when('/confirm-photo', {
+      templateUrl: 'views/take-photo.html',
       controller: 'pointController'
     })
     .when('/show-map', {
@@ -22,6 +25,18 @@
     .when('/finish', {
       templateUrl: 'views/finish.html',
       controller: 'pointController'
+    })
+    .when('/discover', {
+      templateUrl: 'views/discover.html',
+      controller: 'discoverController'
+    })
+    .when('/detail', {
+      templateUrl: 'views/detail.html',
+      controller: 'detailController'
+    })
+    .when('/map', {
+      templateUrl: 'views/map.html',
+      controller: 'mapController'
     })
     .otherwise({
       redirectTo: '/'
