@@ -1,6 +1,7 @@
 
   'use strict';
 
+  window.onhashchange =function(e) { alert(e.newURL); console.log(e);};
   angular.module('initApp', ['initApp.services','initApp.controllers'])
   .config(function ($routeProvider) {
     $routeProvider
