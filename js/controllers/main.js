@@ -23,22 +23,25 @@ initApp.controller('pointController', function ($scope, geolocation, camera, poi
 
 
 
+
+
 $scope.wait = false;
-$scope.submitPoint = function() {
-  $scope.wait = true;
-  points.setTag($scope.tag);
-  points.submit(function(data){
-    if (!data){
-        $scope.$apply(function(){
-          $scope.wait = false;
+$scope.error = false;
 
-        });
-    }
-    else{
+$scope.submitPoint = function() {  
+
+$scope.myForm.$invalid;
+  if ($scope.myForm.$valid){
+    
+    $scope.wait = true;
+    points.setTag($scope.tag);
+    points.submit(function(){
       window.location.hash ="finish";
-    }
+    });
 
-  });
+  }else{
+    $scope.error = true;
+  }
 };
 
 
