@@ -42,13 +42,13 @@ angular.module('initApp.services', ['LocalStorageModule', 'ngResource'])
     },
     submit:function (callback){
        // var service = 'http://localhost:1984/api/v1/points/create';
-      var service ='http://mapart.herokuapp.com:1984/api/v1/points/create';
+      var service ='http://mapart.herokuapp.com/api/v1/points/create';
       // var dataURL = canvas.toDataURL("image/png")
       var fail, ft, options, params, win;
 
     // callback if the photo fails to upload successfully.
      var fail= function(error) {
-
+        // alert(JSON.stringify(error));
         alert("Ups, no hemos podido transferir la foto. Intentalo de nuevo! ");
         callback(false);
       };
